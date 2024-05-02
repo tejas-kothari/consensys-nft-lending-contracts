@@ -117,11 +117,7 @@ contract NftLending {
             msg.sender
         ];
 
-        ERC20(denomination).transferFrom(
-            address(this),
-            msg.sender,
-            loanOffer.amount
-        );
+        ERC20(denomination).transfer(msg.sender, loanOffer.amount);
 
         delete loanOffers[nft][tokenId][denomination][msg.sender];
     }
