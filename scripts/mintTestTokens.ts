@@ -14,7 +14,7 @@ async function main() {
 
   const output = [];
   for (let i = 0; i < tokenSyms.length; i++) {
-    output.push({ symbol: tokenSyms[i], address: addresses[i] });
+    output.push({ symbol: tokenSyms[i], address: addresses[i], decimals: 18 });
   }
   console.log(JSON.stringify(output));
 }
