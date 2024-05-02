@@ -156,6 +156,11 @@ contract NftLending {
             loanOffer.duration + block.timestamp
         );
 
+        ERC20(loanRequest.denomination).transfer(
+            loanRequest.borrower,
+            loanOffer.amount
+        );
+
         delete loanRequests[nft][tokenId];
         delete loanOffers[nft][tokenId][loanRequest.denomination][lender];
     }
